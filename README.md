@@ -2,11 +2,27 @@
 <!--SAP ABAP project demonstrating the implementation of Elementary and Collective Search Helps using LIKP and LIPS tables. Developed a unified F4 help interface to improve data retrieval, user navigation, and search functionality within SAP applications.
 -->
 
+<!--# SAP ABAP Collective Search Help -->
+
+## Project Information
+
+| Attribute        | Details                             |
+| ---------------- | ----------------------------------- |
+| Project Name     | SAP ABAP Collective Search Help     |
+| Project Type     | SAP ABAP Mini Project               |
+| Module           | SAP ABAP                            |
+| Object Type      | Collective Search Help              |
+| Tables Used      | LIKP, LIPS                          |
+| Search Help Type | Elementary & Collective Search Help |
+| Development Tool | SAP Data Dictionary (DDIC)          |
+
+---
+
 ## Project Overview
 
 This project demonstrates the development of a custom SAP ABAP Collective Search Help by combining multiple Elementary Search Helps into a single reusable search interface.
 
-The solution enables users to retrieve both Delivery Header and Delivery Item information through a unified F4 help, improving usability and simplifying data selection within SAP applications.
+The solution enables users to retrieve both Delivery Header and Delivery Item information through a unified F4 Help, improving usability and simplifying data selection within SAP applications.
 
 ---
 
@@ -14,12 +30,7 @@ The solution enables users to retrieve both Delivery Header and Delivery Item in
 
 In many SAP business processes, users need quick access to delivery-related information while entering or searching for documents.
 
-Instead of maintaining separate search helps for:
-
-- Delivery Header Data (LIKP)
-- Delivery Item Data (LIPS)
-
-a Collective Search Help was designed to provide both datasets through a single search interface.
+Instead of maintaining separate search helps for Delivery Header Data (LIKP) and Delivery Item Data (LIPS), a Collective Search Help was designed to provide both datasets through a single search interface.
 
 This approach improves user experience and reduces navigation complexity.
 
@@ -27,13 +38,11 @@ This approach improves user experience and reduces navigation complexity.
 
 ## Objective
 
-The objective of this project was to:
-
-- Create custom Elementary Search Helps.
-- Develop a Collective Search Help.
-- Integrate multiple search helps into a single F4 Help.
-- Enable efficient delivery document search.
-- Demonstrate SAP Data Dictionary (DDIC) concepts.
+* Create custom Elementary Search Helps.
+* Develop a Collective Search Help.
+* Integrate multiple Search Helps into a single F4 Help.
+* Enable efficient delivery document search.
+* Demonstrate SAP Data Dictionary (DDIC) concepts.
 
 ---
 
@@ -45,11 +54,11 @@ Created an Elementary Search Help using the LIKP (Delivery Header) table.
 
 #### Fields Included
 
-| Field | Description |
-|---------|-------------|
+| Field | Description     |
+| ----- | --------------- |
 | VBELN | Delivery Number |
-| ERNAM | Created By |
-| BZIRK | Sales District |
+| ERNAM | Created By      |
+| BZIRK | Sales District  |
 
 ---
 
@@ -59,11 +68,11 @@ Created an Elementary Search Help using the LIPS (Delivery Item) table.
 
 #### Fields Included
 
-| Field | Description |
-|---------|-------------|
+| Field | Description     |
+| ----- | --------------- |
 | VBELN | Delivery Number |
-| POSNR | Item Number |
-| ERNAM | Created By |
+| POSNR | Item Number     |
+| ERNAM | Created By      |
 
 ---
 
@@ -71,16 +80,14 @@ Created an Elementary Search Help using the LIPS (Delivery Item) table.
 
 Created a Collective Search Help that combines:
 
-- ZAVI_MINIPRO_SH1_LIKP
-- ZAVI_MINIPRO_SH2_LIPS
+* ZAVI_MINIPRO_SH1_LIKP
+* ZAVI_MINIPRO_SH2_LIPS
 
-The collective search help allows users to switch between Delivery Header and Delivery Item information within the same search interface.
+The Collective Search Help allows users to switch between Delivery Header and Delivery Item information within the same search interface.
 
 ---
 
-### Step 4:  Matchcode Object Integration
-
-The Collective Search Help `ZAVI_MINIPRO_SH3_CTIVE` was integrated into the ABAP report using the `MATCHCODE OBJECT` statement.
+### Step 4: Matchcode Object Integration
 
 ```abap
 PARAMETERS:
@@ -88,9 +95,9 @@ PARAMETERS:
   MATCHCODE OBJECT ZAVI_MINIPRO_SH3_CTIVE.
 ```
 
-The `MATCHCODE OBJECT` keyword links the selection screen parameter `P_VBELN` with the custom Collective Search Help. When the user presses **F4**, SAP automatically invokes the assigned search help and displays available delivery data.
+The `MATCHCODE OBJECT` keyword links the selection screen parameter `P_VBELN` with the custom Collective Search Help.
 
-This implementation allows users to access both Delivery Header (LIKP) and Delivery Item (LIPS) information through a single search interface without manually entering values.
+When the user presses **F4**, SAP automatically invokes the assigned Search Help and displays available delivery data.
 
 #### Benefits
 
@@ -98,35 +105,53 @@ This implementation allows users to access both Delivery Header (LIKP) and Deliv
 * Faster data selection
 * Reduced manual entry errors
 * Improved user experience
-* Reusable search help integration across SAP applications
-
-
-This enables F4 search functionality directly from the selection screen.
+* Reusable Search Help integration across SAP applications
 
 ---
 
 ## Tables Used
 
-| Table | Description |
-|---------|-------------|
-| LIKP | Delivery Header Data |
-| LIPS | Delivery Item Data |
+| Table | Description          |
+| ----- | -------------------- |
+| LIKP  | Delivery Header Data |
+| LIPS  | Delivery Item Data   |
 
 ---
 
 ## Technologies Used
 
-- SAP ABAP
-- SAP Data Dictionary (DDIC)
-- Elementary Search Help
-- Collective Search Help
-- Matchcode Object
-- Selection Screen Programming
+* SAP ABAP
+* SAP Data Dictionary (DDIC)
+* Elementary Search Help
+* Collective Search Help
+* Matchcode Object
+* Selection Screen Programming
 
+---
+
+## Skills Demonstrated
+
+* SAP ABAP Development
+* SAP Data Dictionary (DDIC)
+* Elementary Search Help Configuration
+* Collective Search Help Development
+* Matchcode Object Integration
+* Selection Screen Programming
+* SAP Data Modeling
+
+---
+
+## Business Benefits
+
+* Reduces manual data entry through F4 Help integration.
+* Improves delivery document search efficiency.
+* Provides a unified search interface for header and item data.
+* Enhances user productivity and navigation.
+* Supports reusable SAP Data Dictionary objects.
+
+---
 
 ## Project Architecture
-
-## Project Flow
 
 ```text
                     ┌────────────┐      ┌────────────┐
@@ -153,7 +178,7 @@ This enables F4 search functionality directly from the selection screen.
 
                        ┌─────────────────────┐
                        │   ABAP Selection    │
-                       │   Screen 🔍 F4 Help │
+                       │  Screen (F4 Help)   │
                        └──────────┬──────────┘
                                   │
                                   ▼
@@ -163,31 +188,26 @@ This enables F4 search functionality directly from the selection screen.
                        │    Delivery Data    │
                        └─────────────────────┘
 ```
+
+---
+
 ## Screenshots
 
 ### ABAP Program
 
 ![ABAP Program](code.png)
 
----
-
-### Elementary Search Help – LIKP
+### Elementary Search Help – SH1_LIKP
 
 ![LIKP Search Help](sh1.png)
 
----
-
-### Elementary Search Help – LIPS
+### Elementary Search Help – SH2_LIPS
 
 ![LIPS Search Help](sh2.png)
-
----
 
 ### Collective Search Help Configuration
 
 ![Collective Search Help](collective.png)
-
----
 
 ### Final Output
 
@@ -197,15 +217,23 @@ This enables F4 search functionality directly from the selection screen.
 
 ## Key Learnings
 
-Through this project, I gained practical experience in:
+* SAP Data Dictionary (DDIC)
+* Search Help Creation
+* Elementary Search Helps
+* Collective Search Helps
+* Matchcode Objects
+* Selection Screen Development
+* SAP ABAP Report Integration
 
-- SAP Data Dictionary (DDIC)
-- Search Help Creation
-- Elementary Search Helps
-- Collective Search Helps
-- Matchcode Objects
-- Selection Screen Development
-- SAP ABAP Report Integration
+---
+
+## Future Enhancements
+
+* Implement custom Search Help Exits.
+* Add advanced filtering capabilities.
+* Integrate additional delivery-related tables.
+* Support dynamic search criteria.
+* Extend functionality for other SAP modules.
 
 ---
 
@@ -223,5 +251,4 @@ The solution improves user navigation, simplifies document search, and demonstra
 
 SAP ABAP Developer Intern | Computer Science Student
 
-LinkedIn:
-linkedin.com/in/avishek-chourasiya
+LinkedIn: linkedin.com/in/avishek-chourasiya
