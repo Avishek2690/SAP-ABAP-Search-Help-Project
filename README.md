@@ -78,15 +78,28 @@ The collective search help allows users to switch between Delivery Header and De
 
 ---
 
-### Step 4: Program Integration
+### Step 4:  Matchcode Object Integration
 
-Integrated the Collective Search Help into an ABAP report using the MATCHCODE OBJECT parameter.
+The Collective Search Help `ZAVI_MINIPRO_SH3_CTIVE` was integrated into the ABAP report using the `MATCHCODE OBJECT` statement.
 
 ```abap
 PARAMETERS:
   p_vbeln TYPE char10
   MATCHCODE OBJECT ZAVI_MINIPRO_SH3_CTIVE.
 ```
+
+The `MATCHCODE OBJECT` keyword links the selection screen parameter `P_VBELN` with the custom Collective Search Help. When the user presses **F4**, SAP automatically invokes the assigned search help and displays available delivery data.
+
+This implementation allows users to access both Delivery Header (LIKP) and Delivery Item (LIPS) information through a single search interface without manually entering values.
+
+#### Benefits
+
+* Simplified user input
+* Faster data selection
+* Reduced manual entry errors
+* Improved user experience
+* Reusable search help integration across SAP applications
+
 
 This enables F4 search functionality directly from the selection screen.
 
@@ -110,7 +123,6 @@ This enables F4 search functionality directly from the selection screen.
 - Matchcode Object
 - Selection Screen Programming
 
----
 
 ## Project Architecture
 
