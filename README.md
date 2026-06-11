@@ -173,25 +173,25 @@ This enables F4 search functionality directly from the selection screen.
 
 ### Elementary Search Help – LIKP
 
-![LIKP Search Help](screenshots/02-sh-likp.png)
+![LIKP Search Help](sh1.png)
 
 ---
 
 ### Elementary Search Help – LIPS
 
-![LIPS Search Help](screenshots/03-sh-lips.png)
+![LIPS Search Help](sh2.png)
 
 ---
 
 ### Collective Search Help Configuration
 
-![Collective Search Help](screenshots/04-collective-sh.png)
+![Collective Search Help](collective.png)
 
 ---
 
 ### Final Output
 
-![Output](screenshots/05-output.png)
+![Output](output.png)
 
 ---
 
