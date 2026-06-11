@@ -155,7 +155,7 @@ This enables F4 search functionality directly from the selection screen.
 
 ### ABAP Program
 
-![ABAP Program](screenshots/01-program-code.png)
+![ABAP Program](code.png)
 
 ---
 
